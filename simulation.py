@@ -44,27 +44,30 @@ class TicTacToe:
 
     def check_terminal_all(self, recorder=None):
         if self.check_terminal_player(1):
-            print("O's win!")
             if recorder is not None:
                 recorder.winner = 1
                 recorder.terminal.append(1)
-            return True
+            else:
+                print("O's win!")
+            return 1
         elif self.check_terminal_player(-1):
             if recorder is not None:
                 recorder.winner = -1
                 recorder.terminal.append(1)
-            print("X's win!")
-            return True
+            else:
+                print("X's win!")
+            return -1
         elif np.sum(self.get_legal_actions()) == 0:
             if recorder is not None:
                 recorder.winner = 0
                 recorder.terminal.append(1)
-            print("Stalemate!")
-            return True
+            else:
+                print("Stalemate!")
+            return 0
         else:
             if recorder is not None:
                 recorder.terminal.append(0)
-            return False
+            return 100
 
     def get_flat_board(self):
         return self.board.flatten()
