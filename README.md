@@ -1,4 +1,4 @@
-# TicTacToe Testbed
+# TicTacToe Reinforcement Learning Testbed
 
 I threw together this TicTacToe environment to serve as a sanity check to ensure I understood the algorithms involved.
 
